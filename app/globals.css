@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS Variables for theme consistency */
+:root {
+  /* Backgrounds */
+  --bg-primary: #0E1111;
+  --bg-secondary: #121515;
+  --bg-surface: #151A1A;
+  --bg-elevated: #1A2020;
+  --bg-hover: #242B2B;
+  
+  /* Borders */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-default: rgba(255, 255, 255, 0.10);
+  --border-emphasis: rgba(255, 255, 255, 0.12);
+  
+  /* Accent */
+  --accent: #5E8B8B;
+  --accent-light: #7BA3A3;
+  --accent-muted: #4A7272;
+  --accent-dim: #3D5E5E;
+  
+  /* Text */
+  --text-primary: #E8ECEC;
+  --text-secondary: #9BA3A3;
+  --text-muted: #6B7575;
+  
+  /* Transitions */
+  --transition-fast: 200ms ease-out;
+  --transition-default: 280ms ease-out;
+  --transition-slow: 320ms ease-out;
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Selection styling */
+::selection {
+  background-color: var(--accent-dim);
+  color: var(--text-primary);
+}
+
+/* Focus ring utility */
+.focus-ring {
+  @apply outline-none ring-2 ring-accent/40 ring-offset-2 ring-offset-graphite-950;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-emphasis);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* Utility classes */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .border-subtle {
+    border-color: var(--border-subtle);
+  }
+  
+  .border-default {
+    border-color: var(--border-default);
+  }
+  
+  .bg-surface {
+    background-color: var(--bg-surface);
+  }
+  
+  .bg-elevated {
+    background-color: var(--bg-elevated);
+  }
+}
